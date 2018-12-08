@@ -1,0 +1,12 @@
+ffmpeg_android/
+aac_android/
+x264_android/
+*.lo
+*.a
+*.so
+*.o
+*.la
+*.lai
+*.d
+*.pc
+toolchains/
