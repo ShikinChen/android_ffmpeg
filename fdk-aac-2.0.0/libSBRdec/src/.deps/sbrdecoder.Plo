@@ -1,0 +1,125 @@
+libSBRdec/src/sbrdecoder.lo: libSBRdec/src/sbrdecoder.cpp \
+ libSBRdec/include/sbrdecoder.h libFDK/include/common_fix.h \
+ libFDK/include/FDK_archdef.h libSYS/include/machine_type.h \
+ /Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h \
+ libFDK/include/fixmul.h libFDK/include/arm/fixmul_arm.h \
+ libFDK/include/abs.h libFDK/include/clz.h libFDK/include/arm/clz_arm.h \
+ libFDK/include/fixmadd.h libFDK/include/arm/fixmadd_arm.h \
+ libFDK/include/fixminmax.h libFDK/include/cplx_mul.h \
+ libFDK/include/common_fix.h libFDK/include/arm/cplx_mul_arm.h \
+ libFDK/include/fixpoint_math.h libFDK/include/scale.h \
+ libSYS/include/genericStds.h libSYS/include/machine_type.h \
+ libFDK/include/arm/scale_arm.h libFDK/include/FDK_bitstream.h \
+ libFDK/include/FDK_bitbuffer.h libSYS/include/FDK_audio.h \
+ libSYS/include/genericStds.h libSYS/include/syslib_channelMapDescr.h \
+ libFDK/include/FDK_qmf_domain.h libFDK/include/qmf.h \
+ libFDK/include/FDK_tools_rom.h libFDK/include/dct.h \
+ libSBRdec/src/sbrdec_freq_sca.h libSBRdec/src/env_extr.h \
+ libSBRdec/src/lpp_tran.h libSBRdec/src/hbe.h libFDK/include/qmf.h \
+ libSBRdec/src/psdec.h libFDK/include/FDK_hybrid.h \
+ libFDK/include/FDK_decorrelate.h libSBRdec/src/pvc_dec.h \
+ libSBRdec/src/sbr_dec.h libSBRdec/src/env_calc.h \
+ libSBRdec/src/sbrdec_drc.h libSBRdec/src/env_dec.h \
+ libSBRdec/src/sbr_crc.h libSBRdec/src/sbr_ram.h libSBRdec/src/sbr_rom.h \
+ libSBRdec/src/transcendent.h libFDK/include/FDK_crc.h \
+ libFDK/include/FDK_bitstream.h libSBRdec/src/psbitdec.h
+
+libSBRdec/include/sbrdecoder.h:
+
+libFDK/include/common_fix.h:
+
+libFDK/include/FDK_archdef.h:
+
+libSYS/include/machine_type.h:
+
+/Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h:
+
+libFDK/include/fixmul.h:
+
+libFDK/include/arm/fixmul_arm.h:
+
+libFDK/include/abs.h:
+
+libFDK/include/clz.h:
+
+libFDK/include/arm/clz_arm.h:
+
+libFDK/include/fixmadd.h:
+
+libFDK/include/arm/fixmadd_arm.h:
+
+libFDK/include/fixminmax.h:
+
+libFDK/include/cplx_mul.h:
+
+libFDK/include/common_fix.h:
+
+libFDK/include/arm/cplx_mul_arm.h:
+
+libFDK/include/fixpoint_math.h:
+
+libFDK/include/scale.h:
+
+libSYS/include/genericStds.h:
+
+libSYS/include/machine_type.h:
+
+libFDK/include/arm/scale_arm.h:
+
+libFDK/include/FDK_bitstream.h:
+
+libFDK/include/FDK_bitbuffer.h:
+
+libSYS/include/FDK_audio.h:
+
+libSYS/include/genericStds.h:
+
+libSYS/include/syslib_channelMapDescr.h:
+
+libFDK/include/FDK_qmf_domain.h:
+
+libFDK/include/qmf.h:
+
+libFDK/include/FDK_tools_rom.h:
+
+libFDK/include/dct.h:
+
+libSBRdec/src/sbrdec_freq_sca.h:
+
+libSBRdec/src/env_extr.h:
+
+libSBRdec/src/lpp_tran.h:
+
+libSBRdec/src/hbe.h:
+
+libFDK/include/qmf.h:
+
+libSBRdec/src/psdec.h:
+
+libFDK/include/FDK_hybrid.h:
+
+libFDK/include/FDK_decorrelate.h:
+
+libSBRdec/src/pvc_dec.h:
+
+libSBRdec/src/sbr_dec.h:
+
+libSBRdec/src/env_calc.h:
+
+libSBRdec/src/sbrdec_drc.h:
+
+libSBRdec/src/env_dec.h:
+
+libSBRdec/src/sbr_crc.h:
+
+libSBRdec/src/sbr_ram.h:
+
+libSBRdec/src/sbr_rom.h:
+
+libSBRdec/src/transcendent.h:
+
+libFDK/include/FDK_crc.h:
+
+libFDK/include/FDK_bitstream.h:
+
+libSBRdec/src/psbitdec.h:

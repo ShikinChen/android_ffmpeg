@@ -1,0 +1,75 @@
+libSACenc/src/sacenc_dmx_tdom_enh.lo: \
+ libSACenc/src/sacenc_dmx_tdom_enh.cpp \
+ libSACenc/src/sacenc_dmx_tdom_enh.h libSACenc/include/sacenc_lib.h \
+ libSYS/include/machine_type.h \
+ /Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h \
+ libSYS/include/FDK_audio.h libSYS/include/machine_type.h \
+ libSYS/include/genericStds.h libSYS/include/syslib_channelMapDescr.h \
+ libFDK/include/common_fix.h libFDK/include/FDK_archdef.h \
+ libFDK/include/fixmul.h libFDK/include/arm/fixmul_arm.h \
+ libFDK/include/abs.h libFDK/include/clz.h libFDK/include/arm/clz_arm.h \
+ libFDK/include/fixmadd.h libFDK/include/arm/fixmadd_arm.h \
+ libFDK/include/fixminmax.h libFDK/include/cplx_mul.h \
+ libFDK/include/common_fix.h libFDK/include/arm/cplx_mul_arm.h \
+ libFDK/include/fixpoint_math.h libFDK/include/scale.h \
+ libSYS/include/genericStds.h libFDK/include/arm/scale_arm.h \
+ libFDK/include/FDK_matrixCalloc.h libFDK/include/FDK_trigFcts.h \
+ libFDK/include/FDK_tools_rom.h libFDK/include/fixpoint_math.h
+
+libSACenc/src/sacenc_dmx_tdom_enh.h:
+
+libSACenc/include/sacenc_lib.h:
+
+libSYS/include/machine_type.h:
+
+/Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h:
+
+libSYS/include/FDK_audio.h:
+
+libSYS/include/machine_type.h:
+
+libSYS/include/genericStds.h:
+
+libSYS/include/syslib_channelMapDescr.h:
+
+libFDK/include/common_fix.h:
+
+libFDK/include/FDK_archdef.h:
+
+libFDK/include/fixmul.h:
+
+libFDK/include/arm/fixmul_arm.h:
+
+libFDK/include/abs.h:
+
+libFDK/include/clz.h:
+
+libFDK/include/arm/clz_arm.h:
+
+libFDK/include/fixmadd.h:
+
+libFDK/include/arm/fixmadd_arm.h:
+
+libFDK/include/fixminmax.h:
+
+libFDK/include/cplx_mul.h:
+
+libFDK/include/common_fix.h:
+
+libFDK/include/arm/cplx_mul_arm.h:
+
+libFDK/include/fixpoint_math.h:
+
+libFDK/include/scale.h:
+
+libSYS/include/genericStds.h:
+
+libFDK/include/arm/scale_arm.h:
+
+libFDK/include/FDK_matrixCalloc.h:
+
+libFDK/include/FDK_trigFcts.h:
+
+libFDK/include/FDK_tools_rom.h:
+
+libFDK/include/fixpoint_math.h:

@@ -1,0 +1,9 @@
+libSACenc/src/sacenc_huff_tab.lo: libSACenc/src/sacenc_huff_tab.cpp \
+ libSACenc/src/sacenc_huff_tab.h libSYS/include/machine_type.h \
+ /Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h
+
+libSACenc/src/sacenc_huff_tab.h:
+
+libSYS/include/machine_type.h:
+
+/Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h:

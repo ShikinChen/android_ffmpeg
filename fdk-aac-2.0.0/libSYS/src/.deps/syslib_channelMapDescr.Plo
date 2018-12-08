@@ -1,0 +1,10 @@
+libSYS/src/syslib_channelMapDescr.lo: \
+ libSYS/src/syslib_channelMapDescr.cpp \
+ libSYS/include/syslib_channelMapDescr.h libSYS/include/machine_type.h \
+ /Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h
+
+libSYS/include/syslib_channelMapDescr.h:
+
+libSYS/include/machine_type.h:
+
+/Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h:

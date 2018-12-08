@@ -1,0 +1,68 @@
+libFDK/src/nlc_dec.lo: libFDK/src/nlc_dec.cpp libFDK/include/nlc_dec.h \
+ libFDK/include/FDK_bitstream.h libFDK/include/FDK_bitbuffer.h \
+ libFDK/include/FDK_archdef.h libSYS/include/machine_type.h \
+ /Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h \
+ libSYS/include/genericStds.h libSYS/include/machine_type.h \
+ libFDK/include/huff_nodes.h libFDK/include/common_fix.h \
+ libFDK/include/fixmul.h libFDK/include/arm/fixmul_arm.h \
+ libFDK/include/abs.h libFDK/include/clz.h libFDK/include/arm/clz_arm.h \
+ libFDK/include/fixmadd.h libFDK/include/arm/fixmadd_arm.h \
+ libFDK/include/fixminmax.h libFDK/include/cplx_mul.h \
+ libFDK/include/arm/cplx_mul_arm.h libFDK/include/fixpoint_math.h \
+ libFDK/include/scale.h libFDK/include/arm/scale_arm.h \
+ libFDK/include/FDK_tools_rom.h libSYS/include/FDK_audio.h \
+ libSYS/include/genericStds.h libSYS/include/syslib_channelMapDescr.h
+
+libFDK/include/nlc_dec.h:
+
+libFDK/include/FDK_bitstream.h:
+
+libFDK/include/FDK_bitbuffer.h:
+
+libFDK/include/FDK_archdef.h:
+
+libSYS/include/machine_type.h:
+
+/Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h:
+
+libSYS/include/genericStds.h:
+
+libSYS/include/machine_type.h:
+
+libFDK/include/huff_nodes.h:
+
+libFDK/include/common_fix.h:
+
+libFDK/include/fixmul.h:
+
+libFDK/include/arm/fixmul_arm.h:
+
+libFDK/include/abs.h:
+
+libFDK/include/clz.h:
+
+libFDK/include/arm/clz_arm.h:
+
+libFDK/include/fixmadd.h:
+
+libFDK/include/arm/fixmadd_arm.h:
+
+libFDK/include/fixminmax.h:
+
+libFDK/include/cplx_mul.h:
+
+libFDK/include/arm/cplx_mul_arm.h:
+
+libFDK/include/fixpoint_math.h:
+
+libFDK/include/scale.h:
+
+libFDK/include/arm/scale_arm.h:
+
+libFDK/include/FDK_tools_rom.h:
+
+libSYS/include/FDK_audio.h:
+
+libSYS/include/genericStds.h:
+
+libSYS/include/syslib_channelMapDescr.h:

@@ -1,0 +1,121 @@
+libAACenc/src/sf_estim.lo: libAACenc/src/sf_estim.cpp \
+ libAACenc/src/sf_estim.h libFDK/include/common_fix.h \
+ libFDK/include/FDK_archdef.h libSYS/include/machine_type.h \
+ /Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h \
+ libFDK/include/fixmul.h libFDK/include/arm/fixmul_arm.h \
+ libFDK/include/abs.h libFDK/include/clz.h libFDK/include/arm/clz_arm.h \
+ libFDK/include/fixmadd.h libFDK/include/arm/fixmadd_arm.h \
+ libFDK/include/fixminmax.h libFDK/include/cplx_mul.h \
+ libFDK/include/common_fix.h libFDK/include/arm/cplx_mul_arm.h \
+ libFDK/include/fixpoint_math.h libFDK/include/scale.h \
+ libSYS/include/genericStds.h libSYS/include/machine_type.h \
+ libFDK/include/arm/scale_arm.h libAACenc/src/psy_const.h \
+ libAACenc/src/qc_data.h libAACenc/src/aacenc.h \
+ libSYS/include/FDK_audio.h libSYS/include/genericStds.h \
+ libSYS/include/syslib_channelMapDescr.h libMpegTPEnc/include/tpenc_lib.h \
+ libMpegTPEnc/include/tp_data.h libFDK/include/FDK_bitstream.h \
+ libFDK/include/FDK_bitbuffer.h libSBRenc/include/sbr_encoder.h \
+ libAACenc/src/dyn_bits.h libAACenc/src/aacenc_tns.h \
+ libAACenc/src/adj_thr_data.h libAACenc/src/line_pe.h \
+ libAACenc/src/interface.h libAACenc/src/psy_data.h \
+ libAACenc/src/block_switch.h libFDK/include/mdct.h \
+ libAACenc/src/aacEnc_rom.h libAACenc/src/psy_configuration.h \
+ libAACenc/src/aacenc_pns.h libAACenc/src/pnsparam.h \
+ libFDK/include/FDK_tools_rom.h libFDK/include/FDK_lpc.h \
+ libAACenc/src/quantize.h libAACenc/src/bit_cnt.h
+
+libAACenc/src/sf_estim.h:
+
+libFDK/include/common_fix.h:
+
+libFDK/include/FDK_archdef.h:
+
+libSYS/include/machine_type.h:
+
+/Users/shiki/workspace_android/mydemo/video_demo/ffmpeg_x264_fdk-aac/toolchains/lib/gcc/arm-linux-androideabi/4.9.x/include/stddef.h:
+
+libFDK/include/fixmul.h:
+
+libFDK/include/arm/fixmul_arm.h:
+
+libFDK/include/abs.h:
+
+libFDK/include/clz.h:
+
+libFDK/include/arm/clz_arm.h:
+
+libFDK/include/fixmadd.h:
+
+libFDK/include/arm/fixmadd_arm.h:
+
+libFDK/include/fixminmax.h:
+
+libFDK/include/cplx_mul.h:
+
+libFDK/include/common_fix.h:
+
+libFDK/include/arm/cplx_mul_arm.h:
+
+libFDK/include/fixpoint_math.h:
+
+libFDK/include/scale.h:
+
+libSYS/include/genericStds.h:
+
+libSYS/include/machine_type.h:
+
+libFDK/include/arm/scale_arm.h:
+
+libAACenc/src/psy_const.h:
+
+libAACenc/src/qc_data.h:
+
+libAACenc/src/aacenc.h:
+
+libSYS/include/FDK_audio.h:
+
+libSYS/include/genericStds.h:
+
+libSYS/include/syslib_channelMapDescr.h:
+
+libMpegTPEnc/include/tpenc_lib.h:
+
+libMpegTPEnc/include/tp_data.h:
+
+libFDK/include/FDK_bitstream.h:
+
+libFDK/include/FDK_bitbuffer.h:
+
+libSBRenc/include/sbr_encoder.h:
+
+libAACenc/src/dyn_bits.h:
+
+libAACenc/src/aacenc_tns.h:
+
+libAACenc/src/adj_thr_data.h:
+
+libAACenc/src/line_pe.h:
+
+libAACenc/src/interface.h:
+
+libAACenc/src/psy_data.h:
+
+libAACenc/src/block_switch.h:
+
+libFDK/include/mdct.h:
+
+libAACenc/src/aacEnc_rom.h:
+
+libAACenc/src/psy_configuration.h:
+
+libAACenc/src/aacenc_pns.h:
+
+libAACenc/src/pnsparam.h:
+
+libFDK/include/FDK_tools_rom.h:
+
+libFDK/include/FDK_lpc.h:
+
+libAACenc/src/quantize.h:
+
+libAACenc/src/bit_cnt.h:
