@@ -10,3 +10,6 @@ x264_android/
 *.d
 *.pc
 toolchains/
+fdk-aac-*/
+ffmpeg-*/
+x264-*/
