@@ -13,15 +13,18 @@ X264_CONFIGURE_FLAGS="--enable-static --enable-pic --disable-cli"
 PREFIX_ARCH=$PREFIX/$ABI
 rm -rf $PREFIX_ARCH
 
-FF_CFLAGS="-U_FILE_OFFSET_BITS -DANDROID -D__ANDROID_API__=$ANDROID_API_VERSION"
+X264_CFLAGS="$CFLAGS -U_FILE_OFFSET_BITS -DANDROID -D__ANDROID_API__=$ANDROID_API_VERSION"
+AS_TMP=$AS
+export AS=$CC
 
+echo "X264_CFLAGS:$X264_CFLAGS"
 CC=$CC $X264_PATH/configure \
 	--prefix=$PREFIX_ARCH \
 	--host=$TOOLCHAINS_PREFIX \
 	$X264_CONFIGURE_FLAGS \
-	$EXTRA_CONFIGURE_FLAGS
-	--extra-cflags="$EXTRA_CFLAGS $FF_CFLAGS" \
-    --extra-ldflags="" \
+	$EXTRA_CONFIGURE_FLAGS \
+	--extra-cflags="$EXTRA_CFLAGS $X264_CFLAGS" \
+	--extra-ldflags=""
 
 export CC
 make clean
@@ -31,5 +34,5 @@ rm -rf "$PREFIX_ARCH/lib/pkgconfig"
 if [[ $X264_CONFIGURE_FLAGS == *--enable-shared* ]]; then
 	mv $PREFIX_ARCH/lib/libx264.so.* $PREFIX_ARCH/lib/libx264.so
 fi
-
+export AS=$AS_TMP
 echo "Android x264 bulid success!"

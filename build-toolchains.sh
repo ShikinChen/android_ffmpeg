@@ -3,7 +3,7 @@
 NDK_ROOT=~/Software/Development/android-ndk-r17c
 
 ANDROID_API_VERSION=18
-NDK_TOOLCHAIN_ABI_VERSION=4.8
+NDK_TOOLCHAIN_ABI_VERSION=4.9
 
 ABI=$1
 
@@ -13,8 +13,12 @@ TOOLCHAINS=$(pwd)/"toolchains"
 TOOLCHAINS_PREFIX="arm-linux-androideabi"
 TOOLCHAINS_PATH=${TOOLCHAINS}/bin
 SYSROOT=${TOOLCHAINS}/sysroot
-
-CFLAGS="${CFLAGS} --sysroot=${SYSROOT} -I${SYSROOT}/usr/include -I${TOOLCHAINS}/include"
+CFLAGS=""
+LDFLAGS=""
+EXTRA_CONFIGURE_FLAGS=""
+EXTRA_CFLAGS=""
+CFLAGS="${CFLAGS} --sysroot=${SYSROOT} -I${SYSROOT}/usr/include -I${TOOLCHAINS}/include -isysroot ${SYSROOT}"
+# CFLAGS="${CFLAGS} --sysroot=${SYSROOT} -I${SYSROOT}/usr/include -I${TOOLCHAINS}/include"
 CPPFLAGS="${CFLAGS}"
 LDFLAGS="${LDFLAGS} -L${SYSROOT}/usr/lib -L${TOOLCHAINS}/lib"
 
@@ -30,7 +34,10 @@ function make_standalone_toolchain() {
 		--arch=$1 \
 		--api=$2 \
 		--install-dir=$3 \
-		--stl=gnustl
+		--stl=gnustl \
+		--verbose
+	# --stl=gnustl \'gnustl', 'libc++', 'stlport'
+
 }
 
 function export_vars() {
@@ -93,8 +100,8 @@ if [ $ABI = "armeabi" ]; then
 	make_standalone_toolchain arm $ANDROID_API_VERSION ${TOOLCHAINS}
 	TOOLCHAINS_PREFIX=arm-linux-androideabi
 	ARCH_PREFIX=$ABI
-    EXTRA_CONFIGURE_FLAGS="--disable-asm"
-    EXTRA_CFLAGS="-march=armv5te"
+	EXTRA_CONFIGURE_FLAGS="--disable-asm"
+	EXTRA_CFLAGS="-march=armv5te"
 	ARCH="arm"
 	export_vars
 elif [ $ABI = "armeabi-v7a" ]; then
@@ -103,7 +110,7 @@ elif [ $ABI = "armeabi-v7a" ]; then
 	TOOLCHAINS_PREFIX=arm-linux-androideabi
 	ARCH_PREFIX=$ABI
 	EXTRA_CONFIGURE_FLAGS="--disable-asm"
-    # EXTRA_CFLAGS="-march=armv7-a -mfloat-abi=softfp -mfpu=neon"
+	# EXTRA_CFLAGS="-march=armv7-a -mfloat-abi=softfp -mfpu=neon"
 	EXTRA_CFLAGS="-fpic -ffunction-sections -funwind-tables -fstack-protector -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fomit-frame-pointer -fstrict-aliasing -funswitch-loops -finline-limit=300"
 	ARCH="arm"
 	export_vars
@@ -113,7 +120,7 @@ elif [ $ABI = "arm64-v8a" ]; then
 	make_standalone_toolchain arm64 $ANDROID_API_VERSION ${TOOLCHAINS}
 	TOOLCHAINS_PREFIX=aarch64-linux-android
 	ARCH_PREFIX=$ABI
-	EXTRA_CONFIGURE_FLAGS="--enable-asm"
+	# EXTRA_CONFIGURE_FLAGS="--enable-asm"
 	EXTRA_CFLAGS="-march=armv8-a"
 	ARCH="aarch64"
 	export_vars
@@ -123,7 +130,7 @@ elif [ $ABI = "x86" ]; then
 	TOOLCHAINS_PREFIX=i686-linux-android
 	ARCH_PREFIX=$ABI
 	# x86_64_extra_flags
-    EXTRA_CONFIGURE_FLAGS="--disable-asm"
+	EXTRA_CONFIGURE_FLAGS="--disable-asm"
 	EXTRA_CFLAGS="-march=i686 -mtune=intel -mssse3 -mfpmath=sse -m32"
 	export_vars
 elif [ $ABI = "x86_64" ]; then
@@ -133,7 +140,7 @@ elif [ $ABI = "x86_64" ]; then
 	TOOLCHAINS_PREFIX=x86_64-linux-android
 	ARCH_PREFIX=$ABI
 	# x86_64_extra_flags
-    EXTRA_CONFIGURE_FLAGS="--disable-asm"
+	EXTRA_CONFIGURE_FLAGS="--disable-asm"
 	EXTRA_CFLAGS="-march=x86-64 -msse4.2 -mpopcnt -m64 -mtune=intel"
 	export_vars
 elif [ $ABI = "mips" ]; then

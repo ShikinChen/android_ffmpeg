@@ -29,6 +29,11 @@ FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS} --enable-libx264 --enable-enc
 FF_EXTRA_CFLAGS="${EXTRA_CFLAGS} -I$x264/${ABI}/include  -I$aac/${ABI}/include"
 FF_LDFLAGS="-L$x264/${ABI}/lib  -L$aac/${ABI}/lib"
 
+FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS}  --enable-libfdk-aac --enable-encoder=libfdk-aac --enable-nonfree"
+FF_EXTRA_CFLAGS="${EXTRA_CFLAGS} -I$aac/${ABI}/include"
+FF_LDFLAGS="-L$aac/${ABI}/lib"
+
+echo "PREFIX_ARCH:${PREFIX_ARCH}"
 echo "FF_EXTRA_CONFIGURE_FLAGS:${FF_EXTRA_CONFIGURE_FLAGS}"
 echo "FF_EXTRA_CFLAGS:${FF_EXTRA_CFLAGS}"
 echo "FF_LDFLAGS:${FF_LDFLAGS}"

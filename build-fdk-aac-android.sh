@@ -1,40 +1,32 @@
-#!/bin/bash
-
-AAC_VERSION="2.0.0"
+AAC_VERSION="0.1.6"
 SOURCE="fdk-aac-$AAC_VERSION"
 SHELL_PATH=$(pwd)
 AAC_PATH=$SHELL_PATH/$SOURCE
-#输出路径
 PREFIX=$SHELL_PATH/aac_android
+PREFIX_ARCH=$PREFIX/$ABI
 
-AAC_CONFIGURE_FLAGS="--enable-static --disable-shared --enable-strip --enable-pic --target=android"
+AS_TMP=$AS
+
+#--disable-shared 不能禁用动态链接库ffmpeg需要动态库
+AAC_CONFIGURE_FLAGS="--enable-static --enable-strip --enable-pic --target=android"
+
+export AS=$CC
 
 cd $AAC_PATH
 
-PREFIX_ARCH=$PREFIX/$ABI
-rm -rf $PREFIX_ARCH
-
-echo "PREFIX_ARCH:$PREFIX_ARCH"
-
-FF_CFLAGS="-U_FILE_OFFSET_BITS -DANDROID"
-
-export CFLAGS="$CFLAGS $EXTRA_CFLAGS $FF_CFLAGS"
-echo "CFLAGS:$CFLAGS"
-# echo "TOOLCHAINS_PREFIX:$TOOLCHAINS_PREFIX"
-
-CC=$CC $AAC_PATH/configure \
-	--prefix=$PREFIX_ARCH \
+$AAC_PATH/configure $AAC_CONFIGURE_FLAGS \
 	--host=$TOOLCHAINS_PREFIX \
-	$AAC_CONFIGURE_FLAGS \
-	$EXTRA_CONFIGURE_FLAGS
+	$EXTRA_CONFIGURE_FLAGS \
+	--prefix=$PREFIX_ARCH
 
-export CC
 make clean
+make
 make install
 
+export AS=$AS_TMP
+
 rm -rf "$PREFIX_ARCH/lib/pkgconfig"
-if [[ $AAC_CONFIGURE_FLAGS == *--enable-shared* ]]; then
-	mv $PREFIX_ARCH/lib/libx264.so.* $PREFIX_ARCH/lib/libx264.so
-fi
+rm -rf $PREFIX_ARCH/lib/libfdk-aac.so
+mv $PREFIX_ARCH/lib/libfdk-aac.so.* $PREFIX_ARCH/lib/libfdk-aac.so
 
 echo "Android aac bulid success!"
