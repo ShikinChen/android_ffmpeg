@@ -8,14 +8,14 @@ FF_PATH=$SHELL_PATH/$SOURCE
 #输出路径
 PREFIX=$SHELL_PATH/ffmpeg_android
 
-x264=$SHELL_PATH/x264_android
-aac=$SHELL_PATH/aac_android
+X264=$SHELL_PATH/x264_android/$ABI
+AAC=$SHELL_PATH/aac_android/$ABI
 
 # echo "aac:$aac/${ARCH}/"
 
 echo "CC:$CC"
 
-FF_CONFIGURE_FLAGS="--enable-static --disable-shared --enable-pic --enable-postproc --disable-stripping"
+FF_CONFIGURE_FLAGS="--disable-static --enable-shared --enable-pic --enable-postproc --disable-stripping"
 
 #若使用android-ndk-r15c及以上NDK需要打此补丁(修改FFmepg与NDK代码冲突)
 sh $SHELL_PATH/build-ffmpeg-patch.sh $FF_PATH
@@ -27,9 +27,9 @@ mkdir $TMPDIR
 PREFIX_ARCH=$PREFIX/$ABI
 rm -rf $PREFIX_ARCH
 
-FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS} --disable-static  --enable-shared --enable-libx264 --enable-encoder=libx264 --enable-libfdk-aac --enable-encoder=libfdk-aac --enable-nonfree"
-FF_EXTRA_CFLAGS="${EXTRA_CFLAGS} -I$x264/${ABI}/include  -I$aac/${ABI}/include"
-FF_LDFLAGS="-L$x264/${ABI}/lib  -L$aac/${ABI}/lib"
+FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS} --extra-libs=-ldl --enable-libx264 --enable-encoder=libx264 --enable-libfdk-aac --enable-encoder=libfdk-aac --enable-nonfree"
+FF_EXTRA_CFLAGS="${EXTRA_CFLAGS} -I$X264/include  -I$AAC/include"
+FF_LDFLAGS="-L$X264/lib  -L$AAC/lib"
 
 # FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS}  --enable-libfdk-aac --enable-encoder=libfdk-aac --enable-nonfree"
 # FF_EXTRA_CFLAGS="${EXTRA_CFLAGS} -I$aac/${ABI}/include"
@@ -71,5 +71,12 @@ make install
 
 rm -rf "$PREFIX_ARCH/share"
 rm -rf "$PREFIX_ARCH/lib/pkgconfig"
+mv $PREFIX_ARCH/lib/*.so $PREFIX_ARCH/
+rm -rf $PREFIX_ARCH/lib
+rm -rf $PREFIX/include
+mv $PREFIX_ARCH/include $PREFIX/
+
+# cp $X264/lib/*.so $PREFIX_ARCH/
+cp $AAC/lib/*.so $PREFIX_ARCH/
 
 echo "Android FFmpeg bulid success!"

@@ -8,7 +8,7 @@ X264_PATH=$SHELL_PATH/$SOURCE
 PREFIX=$SHELL_PATH/x264_android
 
 cd $X264_PATH
-X264_CONFIGURE_FLAGS="--enable-static --enable-pic --disable-cli"
+X264_CONFIGURE_FLAGS="--enable-static  --disable-shared --enable-pic --disable-cli"
 
 PREFIX_ARCH=$PREFIX/$ABI
 rm -rf $PREFIX_ARCH
@@ -32,7 +32,7 @@ make install
 
 rm -rf "$PREFIX_ARCH/lib/pkgconfig"
 if [[ $X264_CONFIGURE_FLAGS == *--enable-shared* ]]; then
-	mv $PREFIX_ARCH/lib/libx264.so.* $PREFIX_ARCH/lib/libx264.so
+	# mv $PREFIX_ARCH/lib/libx264.so.* $PREFIX_ARCH/lib/libx264.so
 fi
 export AS=$AS_TMP
 echo "Android x264 bulid success!"
