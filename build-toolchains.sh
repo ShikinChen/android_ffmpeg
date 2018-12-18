@@ -13,13 +13,13 @@ TOOLCHAINS=$(pwd)/"toolchains"
 TOOLCHAINS_PREFIX="arm-linux-androideabi"
 TOOLCHAINS_PATH=${TOOLCHAINS}/bin
 SYSROOT=${TOOLCHAINS}/sysroot
-CFLAGS=""
 LDFLAGS=""
 EXTRA_CONFIGURE_FLAGS=""
 EXTRA_CFLAGS=""
-CFLAGS="${CFLAGS} --sysroot=${SYSROOT} -I${SYSROOT}/usr/include -I${TOOLCHAINS}/include -isysroot ${SYSROOT}"
+CFLAGS="--sysroot=${SYSROOT} -I${SYSROOT}/usr/include -I${TOOLCHAINS}/include -isysroot ${SYSROOT}"
 # CFLAGS="${CFLAGS} --sysroot=${SYSROOT} -I${SYSROOT}/usr/include -I${TOOLCHAINS}/include"
 CPPFLAGS="${CFLAGS}"
+CXXFLAGS="${CFLAGS}"
 LDFLAGS="${LDFLAGS} -L${SYSROOT}/usr/lib -L${TOOLCHAINS}/lib"
 
 CWD=$(pwd)
@@ -34,8 +34,8 @@ function make_standalone_toolchain() {
 		--arch=$1 \
 		--api=$2 \
 		--install-dir=$3 \
-		--stl=gnustl \
-		--verbose
+		--stl=stlport \
+		-v
 	# --stl=gnustl \'gnustl', 'libc++', 'stlport'
 
 }
@@ -73,7 +73,8 @@ function export_vars() {
     # Don't mix up .pc files from your host and build target
     export PKG_CONFIG_PATH=${TOOLCHAINS}/lib/pkgconfig
     
-    export CFLAGS=\" ${CFLAGS}\"
+    export CFLAGS=\" ${CFLAGS} -D__ANDROID_API__=$ANDROID_API_VERSION\"
+	export CXXFLAGS=\" ${CXXFLAGS} -D__ANDROID_API__=$ANDROID_API_VERSION\"
     export CPPFLAGS=\" ${CPPFLAGS}\"
     export LDFLAGS=\" ${LDFLAGS}\"
 
@@ -120,7 +121,7 @@ elif [ $ABI = "arm64-v8a" ]; then
 	make_standalone_toolchain arm64 $ANDROID_API_VERSION ${TOOLCHAINS}
 	TOOLCHAINS_PREFIX=aarch64-linux-android
 	ARCH_PREFIX=$ABI
-	# EXTRA_CONFIGURE_FLAGS="--enable-asm"
+	EXTRA_CONFIGURE_FLAGS="--enable-asm"
 	EXTRA_CFLAGS="-march=armv8-a"
 	ARCH="aarch64"
 	export_vars

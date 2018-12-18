@@ -5,10 +5,10 @@ ARCHS=(arm64-v8a)
 for i in "${!ARCHS[@]}"; do
 
 	ARCH=${ARCHS[$i]}
-	# sh build-toolchains.sh $ARCH
+	sh build-toolchains.sh $ARCH
 	source toolchain.cfg
-	# sh build-fdk-aac-android.sh
-	# sh build-x264-android.sh
+	sh build-fdk-aac-android.sh
+	sh build-x264-android.sh
 	sh build-ffmpeg-android.sh
 
 done

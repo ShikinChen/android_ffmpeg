@@ -13,6 +13,8 @@ aac=$SHELL_PATH/aac_android
 
 # echo "aac:$aac/${ARCH}/"
 
+echo "CC:$CC"
+
 FF_CONFIGURE_FLAGS="--enable-static --disable-shared --enable-pic --enable-postproc --disable-stripping"
 
 #若使用android-ndk-r15c及以上NDK需要打此补丁(修改FFmepg与NDK代码冲突)
@@ -25,20 +27,22 @@ mkdir $TMPDIR
 PREFIX_ARCH=$PREFIX/$ABI
 rm -rf $PREFIX_ARCH
 
-FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS} --enable-libx264 --enable-encoder=libx264 --enable-libfdk-aac --enable-encoder=libfdk-aac --enable-nonfree"
+FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS} --disable-static  --enable-shared --enable-libx264 --enable-encoder=libx264 --enable-libfdk-aac --enable-encoder=libfdk-aac --enable-nonfree"
 FF_EXTRA_CFLAGS="${EXTRA_CFLAGS} -I$x264/${ABI}/include  -I$aac/${ABI}/include"
 FF_LDFLAGS="-L$x264/${ABI}/lib  -L$aac/${ABI}/lib"
 
-FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS}  --enable-libfdk-aac --enable-encoder=libfdk-aac --enable-nonfree"
-FF_EXTRA_CFLAGS="${EXTRA_CFLAGS} -I$aac/${ABI}/include"
-FF_LDFLAGS="-L$aac/${ABI}/lib"
+# FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS}  --enable-libfdk-aac --enable-encoder=libfdk-aac --enable-nonfree"
+# FF_EXTRA_CFLAGS="${EXTRA_CFLAGS} -I$aac/${ABI}/include"
+# FF_LDFLAGS="-L$aac/${ABI}/lib"
 
-echo "PREFIX_ARCH:${PREFIX_ARCH}"
-echo "FF_EXTRA_CONFIGURE_FLAGS:${FF_EXTRA_CONFIGURE_FLAGS}"
-echo "FF_EXTRA_CFLAGS:${FF_EXTRA_CFLAGS}"
-echo "FF_LDFLAGS:${FF_LDFLAGS}"
+# echo "PREFIX_ARCH:${PREFIX_ARCH}"
+# echo "FF_EXTRA_CONFIGURE_FLAGS:${FF_EXTRA_CONFIGURE_FLAGS}"
+# echo "FF_EXTRA_CFLAGS:${FF_EXTRA_CFLAGS}"
+# echo "FF_LDFLAGS:${FF_LDFLAGS}"
 
-FF_CFLAGS="-U_FILE_OFFSET_BITS -O3 -pipe -Wall -ffast-math -fstrict-aliasing -Werror=strict-aliasing -Wno-psabi -Wa,--noexecstack -DANDROID -D__ANDROID_API__=$ANDROID_API_VERSION"
+FF_CFLAGS="-U_FILE_OFFSET_BITS -O3 -pipe -Wall -ffast-math -fstrict-aliasing -Werror=strict-aliasing -Wno-psabi -Wa,--noexecstack -DANDROID"
+
+echo "FF_CFLAGS:$FF_CFLAGS"
 
 CC=$CC $FF_PATH/configure \
 	--prefix=$PREFIX_ARCH \
