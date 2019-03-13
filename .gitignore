@@ -13,3 +13,6 @@ toolchains/
 fdk-aac-*/
 ffmpeg-*/
 x264-*/
+*.bz2
+*.gz
+*.cfg
