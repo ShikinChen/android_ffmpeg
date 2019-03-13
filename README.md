@@ -11,7 +11,7 @@
 | ndk     | android-ndk-r17c-darwin-x86_64     | https://dl.google.com/android/repository/android-ndk-r17c-darwin-x86_64.zip            |
 
 ## 编译步骤
-1. 将FFmpeg X264和fdk-aac解压好的文件夹放到当前项目目录下 如果需要改版本或者文件夹名 分别修改 `build-fdk-aac-android.sh` `build-x264-android.sh` 和 `build-ffmpeg-android.sh` 里面的参数 但是不保证升级后能编译通过
+1. 将FFmpeg X264和fdk-aac解压好的文件夹放到当前项目目录下 如果需要改版本或者文件夹名 分别修改 `build-fdk-aac-android.sh` `build-x264-android.sh` 和 `build-ffmpeg-android.sh` 里面的参数 但是不保证升级后能编译通过    
 <br>
 2. 设置NDK_ROOT路径
 
