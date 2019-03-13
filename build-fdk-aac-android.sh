@@ -1,3 +1,4 @@
+#!/bin/sh
 AAC_VERSION="2.0.0"
 SOURCE="fdk-aac-$AAC_VERSION"
 SHELL_PATH=$(pwd)
