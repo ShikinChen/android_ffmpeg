@@ -1,7 +1,5 @@
 #!/bin/sh
 
-NDK_ROOT=~/Software/Development/android-ndk-r17c
-
 ANDROID_API_VERSION=18
 NDK_TOOLCHAIN_ABI_VERSION=4.9
 
