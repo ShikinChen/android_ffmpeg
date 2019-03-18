@@ -8,7 +8,9 @@
 | FFmpeg  | 4.1                                | http://ffmpeg.org/releases/ffmpeg-4.1.tar.bz2                                          |
 | X264    | x264-snapshot-20181206-2245-stable | http://download.videolan.org/x264/snapshots/x264-snapshot-20181206-2245-stable.tar.bz2 |
 | fdk-aac | 2.0.0                              | https://jaist.dl.sourceforge.net/project/opencore-amr/fdk-aac/fdk-aac-2.0.0.tar.gz     |
+| lame    | lame-3.100                         | https://nchc.dl.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz              |
 | ndk     | android-ndk-r17c-darwin-x86_64     | https://dl.google.com/android/repository/android-ndk-r17c-darwin-x86_64.zip            |
+
 
 ## 编译步骤
 1. 用终端去到当前项目目录用命令赋予脚本权限
