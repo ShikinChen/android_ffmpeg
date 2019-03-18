@@ -10,6 +10,7 @@ PREFIX=$SHELL_PATH/ffmpeg_android
 
 X264=$SHELL_PATH/x264_android/$ABI
 AAC=$SHELL_PATH/aac_android/$ABI
+LAME=$SHELL_PATH/lame_android/$ABI
 
 # echo "aac:$aac/${ARCH}/"
 
@@ -27,9 +28,9 @@ mkdir $TMPDIR
 PREFIX_ARCH=$PREFIX/$ABI
 rm -rf $PREFIX_ARCH
 
-FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS} --extra-libs=-ldl --enable-libx264 --enable-encoder=libx264 --enable-libfdk-aac --enable-encoder=libfdk-aac --enable-nonfree"
-FF_EXTRA_CFLAGS="${EXTRA_CFLAGS} -I$X264/include  -I$AAC/include"
-FF_LDFLAGS="-L$X264/lib  -L$AAC/lib"
+FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS} --extra-libs=-ldl --enable-libx264 --enable-encoder=libx264 --enable-libfdk-aac --enable-encoder=libfdk-aac --enable-libmp3lame --enable-encoder=libmp3lame  --enable-nonfree"
+FF_EXTRA_CFLAGS="${EXTRA_CFLAGS} -I$X264/include -I$AAC/include -I$LAME/include"
+FF_LDFLAGS="-L$X264/lib -L$AAC/lib -L$LAME/lib"
 
 # FF_EXTRA_CONFIGURE_FLAGS="${EXTRA_CONFIGURE_FLAGS}  --enable-libfdk-aac --enable-encoder=libfdk-aac --enable-nonfree"
 # FF_EXTRA_CFLAGS="${EXTRA_CFLAGS} -I$aac/${ABI}/include"

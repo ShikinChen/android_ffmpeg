@@ -1,6 +1,7 @@
 ffmpeg_android/
 aac_android/
 x264_android/
+lame_android/
 *.lo
 *.a
 *.so
@@ -13,6 +14,7 @@ toolchains/
 fdk-aac-*/
 ffmpeg-*/
 x264-*/
+lame-*/
 *.bz2
 *.gz
 *.cfg

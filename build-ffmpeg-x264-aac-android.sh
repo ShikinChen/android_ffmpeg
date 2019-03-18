@@ -9,7 +9,8 @@ for i in "${!ARCHS[@]}"; do
 	source toolchain.cfg
 	sh build-fdk-aac-android.sh
 	sh build-x264-android.sh
+    sh build-lame-android.sh
 	sh build-ffmpeg-android.sh
 done
 
-echo "Android FFmpeg bulid success!"
+# echo "Android FFmpeg bulid success!"
